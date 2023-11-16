@@ -1,0 +1,68 @@
+swagger: '2.0'
+info:
+  title: Neighborhoods API
+  version: '1.0'
+paths:
+  /neighborhoods:
+    get:
+      tags:
+        - neighborhoods
+      description: Fetch neighborhoods based on various metrics.
+      parameters:
+        - name: ageRange
+          in: query
+          description: Filter neighborhoods by age range.
+          type: string
+          required: false
+        - name: maxDistance
+          in: query
+          description: Filter neighborhoods by maximum distance from the city center (in kilometers).
+          type: number
+          required: false
+        - name: sortBy
+          in: query
+          description: Sort neighborhoods by a specified field and order.
+          type: string
+          required: false
+      responses:
+        '200':
+          description: List of neighborhoods.
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                neighborhood:
+                  type: string
+                average_age:
+                  type: integer
+                distance_from_city_center:
+                  type: number
+                average_income:
+                  type: integer
+                public_transport_availability:
+                  type: string
+                latitude:
+                  type: number
+                longitude:
+                  type: number
+definitions:
+  Neighborhood:
+    type: object
+    properties:
+      neighborhood:
+        type: string
+      average_age:
+        type: integer
+      distance_from_city_center:
+        type: number
+      average_income:
+        type: integer
+      public_transport_availability:
+        type: string
+      latitude:
+        type: number
+      longitude:
+        type: number
+      city:
+        type: string

@@ -1,0 +1,14 @@
+Performance Considerations:
+Database Query Optimization:
+1. Indexing - Ensure that database columns used in filtering or sorting are indexed. This significantly speeds up SELECT operations (As been done in the code)
+2.Using Batch - Implement batch processing for large data retrieval. Instead of fetching all records at once, fetch data in smaller chunks to reduce the load on the database.
+
+Caching Strategies:
+1.Data Caching - Implement caching mechanisms for frequently requested data. This reduces the need to query the database for the same data repeatedly.
+
+
+ Scalability and Deployment:
+1. Horizontal Scaling and load balancers 
+2. Database Scaling - Sharding or Read Replicas
+3. Use caching as mentioned before
+4. Auto-Scaling- Utilize the auto-scaling solutions provided by cloud platforms. Configure the system to automatically add or remove instances based on traffic patterns.
